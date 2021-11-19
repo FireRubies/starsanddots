@@ -1,3 +1,9 @@
+//Figure out why it won't play, save, or record the audio
+//Maybe use another audio library to save the file and
+//record the audio but still use p5js to play the audio?
+//Try to make it work here first!!
+//https://editor.p5js.org/FireRubies/sketches/_IfdC2qwE
+
 var text_data = "";
 /* var soundFile = new p5.SoundFile(); */
 var chunks = [];
@@ -72,7 +78,7 @@ async function main(text, char_data, pause_time) {
     console.log("wqwadwawdawdqe")
   }
   console.log("mlob");
-  
+  document.getElementById("progress").innerHTML = `${text.length}/${text.length}`
   await mediaRecorder.stop();
   console.log("blob");
   //soundFile.play();
