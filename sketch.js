@@ -1,9 +1,3 @@
-//Figure out why it won't play, save, or record the audio
-//Maybe use another audio library to save the file and
-//record the audio but still use p5js to play the audio?
-//Try to make it work here first!!
-//https://editor.p5js.org/FireRubies/sketches/_IfdC2qwE
-
 var text_data = "";
 /* var soundFile = new p5.SoundFile(); */
 var chunks = [];
@@ -63,6 +57,7 @@ async function main(text, char_data, pause_time) {
   console.log("wqwqe")
   osc.start(0);
   for (var i = 0; i < text.length; i++) {
+  document.getElementById("progress").innerHTML = `${i}/${text.length}`
     var char = text[i];
     var char_freq = parseInt(char_data[char][0]);
     var char_dur = parseInt(char_data[char][1]);
@@ -87,7 +82,7 @@ async function main(text, char_data, pause_time) {
 function stopOscillator() {
 	//console.log("stopping oscillator");
   //osc.disconnect();
-  osc.frequency.setValueAtTime(0, ac.currentTime);
+  osc.frequency.setValueAtTime(-1000, ac.currentTime);
 }
 
 function startOscillator() {
