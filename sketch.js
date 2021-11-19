@@ -88,7 +88,7 @@ async function main(text, char_data, pause_time) {
 function stopOscillator() {
 	//console.log("stopping oscillator");
   //osc.disconnect();
-  osc.frequency.setValueAtTime(-1000, ac.currentTime);
+  osc.frequency.setValueAtTime(0, ac.currentTime);
 }
 
 function startOscillator() {
