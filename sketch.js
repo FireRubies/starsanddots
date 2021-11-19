@@ -101,6 +101,6 @@ function sleep(ms) {
 
      mediaRecorder.onstop = function(evt) {
        // Make blob out of our blobs, and open it.
-       var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+       var blob = new Blob(chunks, { 'type' : 'audio/mp3; codecs=opus' });
        document.querySelector("audio").src = URL.createObjectURL(blob);
      };
